@@ -1,8 +1,15 @@
 package com.demo.springboot.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Release {
 
     @Id
@@ -15,35 +22,9 @@ public class Release {
     @Column(name = "description")
     private String description;
 
-    public Release() {
-    }
-
     public Release(final String releaseDate, final String description) {
         this.releaseDate = releaseDate;
         this.description = description;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
